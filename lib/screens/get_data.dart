@@ -3,14 +3,14 @@ import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
 import 'package:fire_ex/screens/update_record.dart';
 
-class FetchData extends StatefulWidget {
-  const FetchData({Key? key}) : super(key: key);
+class GetData extends StatefulWidget {
+  const GetData({Key? key}) : super(key: key);
 
   @override
-  State<FetchData> createState() => _FetchDataState();
+  State<GetData> createState() => _GetData();
 }
 
-class _FetchDataState extends State<FetchData> {
+class _GetData extends State<GetData> {
 
   Query dbRef = FirebaseDatabase.instance.ref().child('Students');
   DatabaseReference reference = FirebaseDatabase.instance.ref().child('Students');

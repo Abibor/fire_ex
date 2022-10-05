@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fire_ex/screens/fetch_data.dart';
+import 'package:fire_ex/screens/get_data.dart';
 import 'package:fire_ex/screens/insert_data.dart';
 
 void main() async {
@@ -67,29 +67,34 @@ class _MyHomePageState extends State<MyHomePage> {
             MaterialButton(
               onPressed: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const InsertData()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const InsertData()
+                  )
+                );
               },
-              child: const Text('Insert Data'),
               color: Colors.blue,
               textColor: Colors.white,
               minWidth: 300,
               height: 40,
+              child: const Text('Insert Data'),
             ),
             const SizedBox(
-              height: 30,
+              height: 15,
             ),
             MaterialButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const FetchData()));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const GetData()
+                  )
+                );
               },
-              child: const Text('Fetch Data'),
               color: Colors.blue,
               textColor: Colors.white,
               minWidth: 300,
               height: 40,
+              child: const Text('Get Data'),
             ),
           ],
         ),

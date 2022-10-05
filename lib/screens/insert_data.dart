@@ -10,9 +10,9 @@ class InsertData extends StatefulWidget {
 
 class _InsertDataState extends State<InsertData> {
 
-  final  userNameController = TextEditingController();
-  final  userAgeController= TextEditingController();
-  final  userSalaryController =TextEditingController();
+  final userNameController = TextEditingController();
+  final userAgeController= TextEditingController();
+  final userSalaryController =TextEditingController();
 
   late DatabaseReference dbRef;
 
@@ -27,11 +27,11 @@ class _InsertDataState extends State<InsertData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inserting data'),
+        title: const Text('Inserting data'),
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
               const SizedBox(
@@ -95,11 +95,11 @@ class _InsertDataState extends State<InsertData> {
                   dbRef.push().set(students);
 
                 },
-                child: const Text('Insert Data'),
                 color: Colors.blue,
                 textColor: Colors.white,
                 minWidth: 300,
                 height: 40,
+                child: const Text('Insert Data'),
               ),
             ],
           ),
