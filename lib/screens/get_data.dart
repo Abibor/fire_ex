@@ -17,10 +17,15 @@ class _GetData extends State<GetData> {
 
   Widget listItem({required Map student}) {
     return Container(
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.all(8),
       padding: const EdgeInsets.all(10),
+      decoration: const BoxDecoration(
+        color: Colors.black26,
+        borderRadius: BorderRadius.all(
+          Radius.circular(8),
+        ),
+      ),
       height: 110,
-      color: Colors.black12,
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
