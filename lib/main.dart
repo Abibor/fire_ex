@@ -79,9 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 40,
               child: const Text('Insert Data'),
             ),
-            const SizedBox(
-              height: 15,
-            ),
             MaterialButton(
               onPressed: () {
                 Navigator.push(

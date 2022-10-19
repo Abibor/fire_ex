@@ -22,7 +22,6 @@ class _InsertDataState extends State<InsertData> {
     dbRef = FirebaseDatabase.instance.ref().child('Students');
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
