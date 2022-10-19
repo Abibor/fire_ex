@@ -1,5 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import '../main.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class InsertData extends StatefulWidget {
   const InsertData({Key? key}) : super(key: key);
@@ -85,13 +87,32 @@ class _InsertDataState extends State<InsertData> {
                 ),
                 MaterialButton(
                   onPressed: () {
+                    if (userNameController.text.isEmpty ||
+                        userAgeController.text.isEmpty ||
+                        userSalaryController.text.isEmpty) {
+                      Fluttertoast.showToast(
+                          msg: "You have one or more empty fields. Please fill in all",
+                          toastLength: Toast.LENGTH_SHORT,
+                          gravity: ToastGravity.BOTTOM,
+                          timeInSecForIosWeb: 1,
+                          backgroundColor: Colors.red,
+                          textColor: Colors.white,
+                          fontSize: 16.0);
+                      return;
+                    }
+                    ;
+
+                    //if (userAgeController.text.isEmpty) return;
+                    //if (userSalaryController.text.isEmpty) return;
+
                     Map<String, String> students = {
                       'name': userNameController.text,
                       'age': userAgeController.text,
                       'salary': userSalaryController.text
                     };
-
                     dbRef.push().set(students);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => const MyHomePage()));
                   },
                   color: Colors.blue,
                   textColor: Colors.white,
